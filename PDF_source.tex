@@ -1,0 +1,91 @@
+\documentclass{article}[18pt]
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[magyar]{babel}
+\usepackage[top=1.5cm,bottom=1.5cm,left=1.5cm,right=1.5cm]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage[demo]{graphicx}
+\usepackage{subfig}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\begin{document}
+\begin{titlepage}
+\begin{center}
+\vspace*{1cm}
+ 
+\Huge
+\textit{Számítógépes szimulációk
+}
+ 
+\LARGE
+\vspace{2cm}
+\textbf{1D Húr}
+\vfill
+    
+ 
+\vspace{0.8cm}
+Godó Dániel\\
+W0PKR1\\
+2021.04.25\\
+ 
+\end{center}
+\end{titlepage}
+\newpage
+ \tableofcontents
+ \newpage
+\section{Bevezető}
+Ebben a beadandóban egy 1 dimenziós húr mozgását vizsgáltuk. A mozgás leírásához a következő egyenletet használtuk:
+
+\begin{equation}
+    y_{i,j+1}=2y_{i,j}-y_{i,j-1}+(\frac{c}{c'})^{2}(y_{i+1,j}+y_{i-1,j}-2y_{i,j})
+    \label{visibility}
+\end{equation}
+ahol $j$ jelöli az időbeli mozgást, $i$ a poziciót és $  c'= \frac{\delta x}{\delta t}$  ami a staibilitást jelöli. A rendszert pendített állapotból szimuláltuk a rendszer két szélén rögzített peremfeltetétel mellett.
+
+\section{Első feladat}
+Az első feladat sroán elkellett készíteni a szimulációt és ábrát illetve animációt kellett készíteni a húr mozgásárol.
+
+\begin{figure}[h]
+    \centering
+    \float{{\includegraphics[width=15cm]{letöltés.png} }}%
+\end{figure}
+
+Az ábrákból jól látszik, hogy a szimuláció nem mutat semmi rendelleneséget és az animáción sem tapasztalható semmi furcsa viselkedés. \href{https://gph.is/g/4D8ppYj}{Az első animáció linkjéhez ide kattints}.
+
+\section{Második feladat}
+A második feladat során az analitikus megoldást kellett összehasonlítani a numerikus szimulációval ez számomra nem sikerült, mert nem volt időm rá.
+
+
+\section{Harmadik feladat}
+A harmadik feladat során a húr sebességét kellet megbecsülni. Az általam szimulált első húr terjedési sebessége $c=83,33$ lépés/időegységre becsültem. Az alapján, hogy mekkora a T periódus ideje és hogy mekkora maga a húr hossza.
+\newpage
+\section{Negyedik feladat}
+A negyedik feladatsorán felkellett térképeznünk a rendszer viselkedését különböző $\frac{c}{c'}$ értékekre úgy, hogy $c<=c'$. Ezeket a következő értékekre vizsgáltam meg
+\begin{itemize}
+    \item $\frac{c}{c'}$ = 0.2 \href{https://gph.is/g/amMwwBQ}{Az animációhoz kattints ide}.
+    \item $\frac{c}{c'}$ = 0.4 \href{https://gph.is/g/ZygmmLO}{Az animációhoz kattints ide}.
+    \item $\frac{c}{c'}$ = 0.6 \href{https://gph.is/g/4M6j2WA}{Az animációhoz kattints ide}.
+    \item $\frac{c}{c'}$ = 0.8 \href{https://gph.is/g/E3XoDgL}{Az animációhoz kattints ide}.
+\end{itemize}
+változtatva a $\frac{c}{c'}$ paraméter értékeit a rendszer egészen stabilnak tekinthető az egyedüli változást a rendszer sebességének lefolyásában tapasztaltam.
+
+\section{Ötödik feladat}
+
+Az ötödik feladatsorán különböző kezdőfeltételek mellett kellet vizsgálnunk a rendszert.
+A rendszerben 2 kitérési állapotból indítottam elsőnek messziről. \href{https://gph.is/g/ZP8A2Jr}{Az animációhoz ide kattints}.
+Majd ezt megvizsgáltam közeli módusokkal is. \href{https://gph.is/g/aX8M2WO}{Az animációhoz ide kattints}.
+Itt jól láthatóak a hullámfrontok és az elvárt viselkedést kaptam az animációkból.
+
+\section{Összefoglalás}
+A feladatokat többségét sikeresnek mondhatom kivétel a második feladat megoldását, mert arra nem jutott időm. Ahol nem tüntettem fel a $\frac{c}{c'}$ értékét ott 0.8-al szimuláltam és a teljes feladatmegoldás során a húr hosszát $L$ 50-nek vettem. Az alábbi \href{https://github.com/W0pkr1/1D_String.git}{LINKEN}, pedig ellehet érni a szimuláció program kódját és egyéb fájlokat amiket szinétn feltöltök a kooplexre.
+
+\end{document}
+
+
